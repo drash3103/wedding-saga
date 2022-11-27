@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT US</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+           
+          box-sizing: border-box;
+        }
+        /* navbar*/
+
+
+nav{
+  top: 0;
+  left: 0;
+  right: 0;
+  position:fixed;
+  display: flex;
+  height: 60px;
+  width: 100%;
+  background-image:linear-gradient( #DEB6AB, transparent);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+  z-index: 9999;
+}
+nav .logo{
+  color: #111;
+  font-size: 30px;
+  font-weight: 600;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  font-family:'Luminari', fantasy  ;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a.active,
+nav ul li a:hover{
+  color: rgb(64, 15, 15);
+  text-decoration: underline;
+}
+nav .btn i{
+  color: #111;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1050px){
+  nav{
+    top: 0;
+    left: 0;
+    right: 0;
+    position:fixed;
+    padding: 0 40px 0 50px;
+    background-color: #efc8b1;
+    z-index: 9999;
+  }
+}
+@media (max-width: 1050px) {
+  nav .btn i{
+    display: block;
+  }
+  #click:checked ~ .btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position:fixed;
+    top: 60px;
+    left: -100%;
+    height: 180vh;
+    width: 100%;
+    background-color:#ECCCB2;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+    z-index: 9999;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 30px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: rgb(64, 15, 15);
+  }
+}
+
+nav.scroll {
+  background-color:#DEB6AB;
+}
+.logo{
+  font-family:Luminari, fantasy ;
+  color:rgb(64, 15, 15);
+}
+
+        body{
+            background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-floral-wallpaper_52683-67104.jpg?w=2000");
+    background-repeat: no-repeat;
+    background-size: cover;
+          
+        }
+        .contain {
+    width:100%;
+  background-color:#efc8b1;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right:auto;
+  padding: 1rem;
+  border:5px solid black;
+}
+
+div.form {
+    
+  background-color: #efc8b1;
+}
+.contact-wrapper {
+  margin: auto 0;
+}
+
+.submit-btn {
+  float: left;
+}
+
+
+.form-headline:after {
+  content: "";
+  display: block;
+  width: 10%;
+  padding-top: 10px;
+  border-bottom: 3px solid #AC7088;
+}
+
+.highlight-text {
+  color: #AC7088;
+}
+
+.hightlight-contact-info {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.highlight-text-grey {
+  font-weight: 500;
+}
+
+.email-info {
+    margin-top: 20px;
+}
+
+::-webkit-input-placeholder { /* Chrome */
+  font-family: 'Roboto', sans-serif;
+}
+
+.required-input {
+  color: black;
+}
+@media (min-width: 600px) {
+  .contain {
+    padding: 0;
+  }
+}
+
+h3,
+ul {
+  margin: 0;
+}
+
+h3 {
+  margin-bottom: 1rem;
+}
+
+.form-input:focus,
+textarea:focus{
+  outline: 1.5px solid #AC7088;
+}
+
+.form-input,
+textarea {
+  width: 100%;
+  border: 1px solid #AC7088;
+  border-radius: 5px;
+}
+
+.wrapper > * {
+  padding: 1em;
+}
+@media (min-width: 700px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  .wrapper > * {
+    padding: 2em 2em;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+
+.form {
+  background: #efc8b1;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+form label {
+  display: block;
+}
+form p {
+  margin: 0;
+}
+
+.full-width {
+  grid-column: 1 / 3;
+}
+
+button,
+.submit-btn,
+.form-input,
+textarea {
+  padding: 1em;
+}
+
+button, .submit-btn {
+  background: transparent;
+  border: 1px solid #AC7088;
+  color:black;
+  border-radius: 15px;
+  padding: 5px 20px;
+  text-transform: uppercase;
+}
+button:hover, .submit-btn:hover,
+button:focus , .submit-btn:focus{
+  background: #AC7088;
+  outline: 0;
+  color: #eee;
+}
+.error {
+  color:#AC7088;
+}
+h4{
+    top:8rem;
+    font-size:55px;
+    text-decoration: underline;
+    font-family:luminari,fantasy;
+    color:rgb(66,14,14);
+    text-align:center;
+}
+/* /footer/ */
+.container1{
+ max-width: 1170px;
+ margin:auto;
+}
+.footer-col {
+ float: left;
+ width: 33.33%;
+ padding: 10px;
+ height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+ content: "";
+ display: table;
+ clear: both;
+}
+ .footer{
+ position:relative;
+ top:10px;
+ width:100%;
+ height:30%;
+ background-color: #DEB6AB;
+ padding: 70px 0;
+}
+.footer-col{
+ 
+ width: 33%;
+ padding: 0 15px;
+}
+.footer-col h4{
+ font-size: 22px;
+ color: #ffffff;
+ text-transform: capitalize;
+ margin-bottom: 35px;
+ font-weight: 500;
+ /* position: relative; */
+}
+.footer-col h4::before{
+ content: '';
+ /* position: absolute; */
+ left:0;
+ bottom: -10px;
+ background-color: #AC7088;
+ height: 4px;
+ box-sizing: border-box;
+ width: 50px;
+}
+/*
+.footer-col ul li:not(:last-child){
+ margin-bottom: 10px;
+}*/
+.footer-col ul li a{
+ font-size: 16px;
+ text-transform: capitalize;
+ color:black;
+ text-decoration: none;
+ font-weight: 300;
+ color:black;
+ display: block;
+ transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+ color: #ffffff;
+ padding-left: 8px;
+}
+.footer-col ul p{
+ font-size: 16px;
+ text-transform: capitalize;
+ color: #ffffff;
+ text-decoration: none;
+ font-weight: 300;
+ color: black;
+ display: block;
+ transition: all 0.3s ease;
+}
+.footer-col ul p:hover{
+ color: #ffffff;
+ padding-left: 8px;
+ 
+}
+
+.footer-col .social-links a{
+ display: inline-block;
+ height: 40px;
+ width: 40px;
+ background-color: rgba(255,255,255,0.2);
+ margin:0 10px 10px 0;
+ text-align: center;
+ line-height: 40px;
+ border-radius: 50%;
+ color: #ffffff;
+ transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+ color: #24262b;
+ background-color: #ffffff;
+}
+
+/* /responsive/ */
+@media(max-width: 767px){
+ .footer-col{
+ width: 50%;
+ margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+ .footer-col{
+ width: 100%;
+}
+}
+p{
+    font-family:"lucida",serif;
+    font-size :28px;
+    text-align: center;
+    margin-bottom:4rem;
+    top:1rem;
+}
+.box .btn {
+  display: block;
+  background: #DEB6AB;
+  color: white;
+  padding: 15px 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.9);
+  transition: all 200ms ease-in-out;
+  text-decoration: none;
+}
+.box .btn:hover {
+  background: transparent;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+        <div class="logo" style="color:rgb(64, 15, 15);">The Wedding Saga</div>
+        <input type="checkbox" id="click">
+        <label for="click" class="btn">
+        <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+        <li><a  href="/Users/drashti/Desktop/internship2/css/home.html">Home</a></li>
+        <li><a href="packa.html">Destinations</a></li>
+        <li><a href="/Users/drashti/Desktop/internship2/servicesog.html">Services</a></li>
+        <li><a href="/Users/drashti/Desktop/internship2/Gallery.html">gallery</a></li>
+        <li><a href="/Users/drashti/Desktop/internship2/css/about.html">About Us</a></li>
+        <li><a href="/Users/drashti/Desktop/internship2/css/cont.html">contact Us</a></li>
+        </ul>
+        </nav>
+       </header>
+    <h4>plan your wedding</h4>
+      <div class="contain">
+
+        <div class="wrapper">
+      
+          <div class="form">
+            
+            <h2 class="form-headline">Send us a message</h2>
+            <form id="submit-form" action="">
+              <p>
+                <input id="name" class="form-input" type="text" placeholder="Your Name*">
+                <small class="name-error"></small>
+              </p>
+              <p>
+                <input id="email" class="form-input" type="email" placeholder="Your Email*">
+                <small class="name-error"></small>
+              </p>
+              <p class="full-width">
+                <input id="d" class="form-input" type="date" placeholder="preferred date" required>
+                <small></small>
+              </p>
+              <p class="full-width">
+                <input id="company-name" class="form-input" type="text" placeholder="preferred destination" required>
+                <small></small>
+              </p>
+              <p class="full-width">
+                <textarea  minlength="20" id="message" cols="30" rows="7" placeholder="Your Message*" required></textarea>
+                <small></small>
+              </p>
+              
+              <p class="full-width">
+                <input type="submit" class="submit-btn" value="Submit" onclick="checkValidations()">
+                
+              </p>
+            </form>
+          </div>
+      
+          <div class="contacts contact-wrapper">
+      
+            <ul>
+              <li>creating your happily ever after since day 1.
+                </li>
+              <span class="hightlight-contact-info">
+                <li class="email-info"><i class="fa fa-envelope" aria-hidden="true"></i> theweddingsaga@gmail.com</li>
+                <li><i class="fa fa-phone" aria-hidden="true"></i> <span class="highlight-text">+91  98765781261</span></li>
+              </span>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container1">
+        <div class="row">
+        <div class="footer-col">
+        <h4>links</h4>
+        <ul>
+        <li><a href="/Users/drashti/Desktop/internship2/css/packa.html">packages</a></li>
+        <li><a href="/Users/drashti/Desktop/internship2/servicesog.html">our services</a></li>
+        <li><a href="/Users/drashti/Desktop/internship2/Gallery.html">gallery</a></li>
+        <li><a href="/Users/drashti/Desktop/internship2/css/about.html">about us</a></li>
+        <li><a href="/Users/drashti/Desktop/internship2/css/cont.html">contact us</a></li>
+        </ul>
+        </div>
+        <div class="footer-col">
+        <h4>contact us</h4>
+        <ul>
+        <p>contact number : +91 98765781261</p>
+        
+        <p> email id : theweddingsaga@gmail.com
+        
+        </ul>
+        </div>
+        
+        <div class="footer-col">
+        
+        <a href="#">
+        <div class="scroll-top"></div>
+        </a>
+        <h4>follow us</h4>
+        <div class="social-links">
+        <a href="#"><i class="fa fa-facebook-f" style="color: black;"></i></a>
+        <a href="#"><i class="fa fa-twitter" style="color: black;"></i></a>
+        <a href="#"><i class="fa fa-instagram" style="color: black;"></i></a>
+        <a href="#"><i class="fa fa-linkedin" style="color: black;"></i></a>
+        </div>
+        </div>
+        </div>
+        </div>
+        </footer>
+       
+      <script>
+          window.onscroll = () => {
+ const nav = document.querySelector("#navbar");
+ if (this.scrollY <= 10) nav.className = "";
+ else nav.className = "scroll";
+ };
+        window.onscroll = () => {
+     const nav = document.querySelector("#navbar");
+     if (this.scrollY <= 10) nav.className = "";
+     else nav.className = "scroll";
+   };
+         const nameEl = document.querySelector("#name");
+const emailEl = document.querySelector("#email");
+const companyNameEl = document.querySelector("#company-name");
+const messageEl = document.querySelector("#message");
+
+const form = document.querySelector("#submit-form");
+
+function checkValidations() {
+ let letters = /^[a-zA-Z\s]*$/;
+ const name = nameEl.value.trim();
+ const email = emailEl.value.trim();
+ const companyName = companyNameEl.value.trim();
+ const message = messageEl.value.trim();
+ if (name === "") {
+    document.querySelector(".name-error").classList.add("error");
+     document.querySelector(".name-error").innerText =
+       "Please fill out this field!";
+ } else {
+   if (!letters.test(name)) {
+     document.querySelector(".name-error").classList.add("error");
+     document.querySelector(".name-error").innerText =
+       "Please enter only characters!";
+   } else {
+     
+   }
+ }
+ if (email === "") {
+    document.querySelector(".name-error").classList.add("error");
+     document.querySelector(".name-error").innerText =
+       "Please fill out this field!";
+ } else {
+   if (!letters.test(name)) {
+     document.querySelector(".name-error").classList.add("error");
+     document.querySelector(".name-error").innerText =
+       "Please enter only characters!";
+   } else {
+     
+   }
+ }
+}
+
+function reset() {
+ nameEl = "";
+ emailEl = "";
+ companyNameEl = "";
+ messageEl = "";
+ document.querySelector(".name-error").innerText = "";
+}
+
+     </script>
+    
+</body>
+</html>

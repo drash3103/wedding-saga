@@ -1,0 +1,439 @@
+ nav{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position:fixed;
+    
+  display: flex;
+  height: 60px;
+  width: 100%;
+  background-image: linear-gradient(#DEB6AB,transparent);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+  z-index: 1000;
+}
+nav .logo{
+  color: #111;
+  font-size: 20px;
+  font-weight: 600;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li a{
+    font-family:Luminari, fantasy  ;
+  color:rgb(64, 15, 15);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+
+nav ul li a:hover{
+  text-decoration: underline;
+  color: rgb(64, 15, 15);
+}
+nav .btn i{
+  color: rgb(255, 250, 250);
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1050px){
+  nav{
+    top: 0;
+    left: 0;
+    right: 0;
+    position:fixed;
+    padding: 0 40px 0 50px;
+    background-color: #efc8b1;
+    z-index: 9999;
+  }
+}
+@media (max-width: 1050px) {
+  nav .btn i{
+    font-style: normal;
+    display: block;
+  }
+  #click:checked ~ .btn i:before{
+    
+    content: "\f00d";
+  }
+  nav ul{
+    position:fixed;
+    top: 3.5rem;
+    left: -100%;
+    height: 100vh;
+    width: 100%;
+    background-color:#ECCCB2;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+    z-index: 9999;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: rgb(64, 15, 15);
+  }
+}
+
+nav.scroll {
+    position:fixed;
+  background-color:#DEB6AB;
+}
+.logo{
+    font-family:Luminari, fantasy ;
+    color:rgb(64, 15, 15);
+} 
+ 
+
+body {
+  background-color: #555;
+  background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-floral-wallpaper_52683-67104.jpg?w=2000");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.card {
+  
+  border: 0px solid aqua;
+  margin: 0.5rem;
+  position: relative;
+  height: 12rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  flex: 1;
+  min-width: 290px;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+}
+
+@media (min-width: 900px) {
+
+.card {
+    height: 20rem
+}
+  }
+
+.card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 80%);;
+      z-index: 0;
+    }
+
+.link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+.image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 3s ease;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: relative;
+    z-index: -1;
+  }
+
+.text {
+    position: absolute;
+    bottom: 0rem;
+    padding: 1rem;
+    color: white;
+    transition: background-color 1.5s ease;
+  }
+
+.tiles {
+    transition: color 1s ease;
+    margin-bottom: .5rem;
+    font-family:Luminari, fantasy ;
+    font-size: 30px;;
+  }
+
+.card__post-date {
+    font-size: .7rem;
+    margin-bottom: .5rem;
+    color: #CCC;
+  }
+
+.card__details-wrapper {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 1.5s ease, opacity 1s ease;
+  }
+
+@media (min-width: 900px) {
+    .card:hover .card__details-wrapper {
+      max-height: 20rem;
+      opacity: 1;
+    }
+    .card:hover .text {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .card:hover .tiles {
+      color:beige;
+    }
+    .card:hover .image {
+      transform: scale(1.2);
+      z-index: -1;
+    }
+  }
+  @media (max-width:890px){
+    .card {
+    height: 20rem
+}
+  
+
+.card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 80%);;
+      z-index: 0;
+    }
+    .card:hover .card__details-wrapper {
+      max-height: 20rem;
+      opacity: 1;
+    }
+    .card:hover .text {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .card:hover .tiles {
+      color:beige;
+    }
+    .card:hover .image {
+      transform: scale(1.2);
+      z-index: -1;
+    }
+    
+  
+
+  }
+  /* @media (hover: hover) {
+    .card {
+      transform: translateY(62%);
+      transition: transform 500ms ease-out;
+      transition-delay: 500ms;
+    }
+  } */
+  
+	
+.detail {
+    font-weight: 300;
+    font-size: small;
+  }
+
+.more {
+    background: black;
+    color: rgb(255, 255, 255);
+    display: block;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.3rem;
+    margin-top: 1rem;
+    border: 1px solid #444;
+    font-size: 0.8rem;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    text-decoration: none;
+    width: 7rem;
+    margin-left: auto;
+    position: relative;
+    z-index:0;
+    text-align: center;
+  }
+  .details{
+     margin-left: 3rem;
+     margin-right: 3rem;
+  }
+  .details h2{
+      position:relative;
+      top:80px;
+    text-align: center;
+    
+    font-size: 50px;
+    font-family:Luminari, fantasy;
+    color:rgb(64, 15, 15);
+    opacity:1;
+    z-index: 0;
+    margin-bottom: 8rem;
+    border-bottom: 3px solid rgb(64, 15, 15);
+    margin-top: 4rem;
+  }
+  .details p{
+    padding-bottom: 5rem;
+    font-family: "lucida";
+     font-size: 25px;
+     
+     
+ }
+ .container1{
+  max-width: 1170px;
+  margin:auto;
+ }
+ .footer-col {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+ }
+ 
+ /* Clear floats after the columns */
+ .row:after {
+  content: "";
+  display: table;
+  clear: both;
+ }
+  .footer{
+    /* left:10px; */
+  position:relative;
+  top:250px;
+  width:100%;
+  height:30%;
+  background-color: #DEB6AB;
+   padding: 70px 0; 
+ }
+ .footer-col{
+  
+  width: 30%;
+  /* padding: 0 15px; */
+ }
+ .footer-col h4{
+  font-size: 22px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+ }
+ .footer-col h4::before{
+  content: '';
+  position: absolute;
+  left:0;
+  bottom: -10px;
+  background-color: #AC7088;
+  height: 4px;
+  box-sizing: border-box;
+  width: 50px;
+ }
+ /*
+ .footer-col ul li:not(:last-child){
+  margin-bottom: 10px;
+ }*/
+ .footer-col ul li a{
+  font-size: 16px;
+  text-transform: capitalize;
+  color:black;
+  text-decoration: none;
+  font-weight: 300;
+  color:black;
+  display: block;
+  transition: all 0.3s ease;
+ }
+ .footer-col ul li a:hover{
+  color: #ffffff;
+  padding-left: 8px;
+ }
+ .footer-col ul p{
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: black;
+  display: block;
+  transition: all 0.3s ease;
+ }
+ .footer-col ul p:hover{
+  color: #ffffff;
+  padding-left: 8px;
+  
+ }
+ 
+ .footer-col .social-links a{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255,255,255,0.2);
+  margin:0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+ }
+ .footer-col .social-links a:hover{
+  color: #24262b;
+  background-color: #ffffff;
+ }
+ 
+ /responsive/
+ @media(max-width: 767px){
+  .footer-col{
+  width: 50%;
+  margin-bottom: 30px;
+ }
+ }
+ @media(max-width: 574px){
+  .footer-col{
+  width: 120%;
+ }
+ }
+

@@ -1,0 +1,428 @@
+
+   
+   nav{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position:fixed;
+    
+  display: flex;
+  height: 60px;
+  width: 100%;
+  background-image: linear-gradient(#DEB6AB,transparent);
+  align-items:right;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+  z-index: 1000;
+}
+nav .logo{
+  color: #111;
+  font-size: 30px;
+  font-weight: 600;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li a{
+    font-family:Luminari, fantasy  ;
+  color:rgb(64, 15, 15);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+
+nav ul li a:hover{
+  text-decoration: underline;
+  color: rgb(64, 15, 15);
+}
+nav .btn i{
+  color: rgb(255, 250, 250);
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1050px){
+  nav{
+    top: 0;
+    left: 0;
+    right: 0;
+    position:fixed;
+    padding: 0 40px 0 50px;
+    background-color: #efc8b1;
+    z-index: 9999;
+  }
+}
+@media (max-width: 1050px) {
+  nav .btn i{
+    display: block;
+  }
+  #click:checked ~ .btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position:fixed;
+    top: 80px;
+    left: -100%;
+    height: 100vh;
+    width: 100%;
+    background-color:#ECCCB2;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+    z-index: 9999;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: rgb(64, 15, 15);
+  }
+}
+
+nav.scroll {
+    position:fixed;
+  background-color:#DEB6AB;
+}
+.logo{
+    font-family:Luminari, fantasy ;
+    color:rgb(64, 15, 15);
+}
+
+    .wrapper {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+}
+div {
+  display: block;
+}
+* { 
+  margin : 0;
+  padding: 0;
+  box-sizing : border-box;
+  font-family : "Poppins", sans-serif;
+}
+
+body {
+  display : flex;
+  align-items : center;
+  justify-content :center;
+  background-color:#43345d
+}  
+
+.row{
+  margin: 0 auto;
+  max-width: 100px;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  position : relative;
+  justify-content : center;
+  margin-top: 120px;
+}
+.text_box{
+  align-items:top;
+  
+}
+.row.container {
+  width : 1500px;
+  display : flex;
+  flex-wrap : warp;
+  padding :30px;
+  
+}
+
+.container .card {
+  position: relative;
+  max-width : 300px;
+  height : 200px;  
+  background-color : #fff;
+  margin : 60px 10px;
+  padding : 15px 15px;
+ 
+  flex-direction : column;
+  box-shadow : 0 5px 20px rgba(0,0,0,0.5);
+  transition : 0.3s ease-in-out;
+  border-radius : 15px;
+}
+.container .card:hover {
+  height : 300px;    
+}
+h3{
+  
+  font-family: "luminari",fantasy;
+  color:rgb(64, 15, 15);
+  text-shadow: rgb(253, 253, 253) 5px 5px;
+
+font-size: 40px;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-weight: 700;
+      
+      text-align: center;
+}
+
+.container .card .image {
+  position : relative;
+  width : 260px;
+  height : 260px;
+  top : -45%;
+  left: 2px;
+  box-shadow : 0 5px 20px rgba(0,0,0,0);
+  z-index : 1;
+  font-size: 40px;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-family: cursive;
+  color : #8B4513;
+  text-align : center;
+}
+
+.container .card .image img {
+  max-width : 100%;
+  border-radius : 15px;
+}
+
+.container .card .content {
+  position : relative;
+  top : -150px;
+  padding : 0px auto;
+  color :#8B4513;
+  text-align : center;
+  
+  visibility : hidden;
+  opacity : 0;
+  transition : 0.3s ease-in-out;
+    
+}
+
+.container .card:hover .content {
+   margin-top : 30px;
+   visibility : visible;
+   opacity : 1;
+   transition-delay: 0.2s;
+  
+}
+.container.card.h3{
+  padding-top:20px;
+}
+.saying_block.Musk {
+  background-image: url(https://media.cntraveller.in/wp-content/uploads/2018/10/CityPalace.jpg);
+}
+.saying_block {
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+article,
+aside,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #8B4513;
+  font-family: "Roboto", "Noto Sans TC", sans-serif;
+  color: #000000;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  font-family: "Roboto", "Noto Sans TC", sans-serif;
+  color: black;
+}
+.saying_block.Musk .saying_content {
+  background-color: rgb(245,222,179,0.4);
+}
+.saying_block .saying_content {
+  width: 100%;
+  height: 100%;
+  color: #800000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+@media screen and (max-width:1440){
+    .row{
+        margin: 0 auto;
+        max-width: 100px;
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 60px;
+        position : relative;
+        justify-content : center;
+        margin-top: 120px;
+      }
+      .row.container {
+        width : 1500px;
+        display : block;
+        
+        padding :30px;
+        
+      }
+      .container .card {
+        position: relative;
+        max-width : 300px;
+        height : 200px;  
+        background-color : #fff;
+        margin : 60px 10px;
+        padding : 15px 15px;
+       
+        flex-direction : row;
+        box-shadow : 0 5px 20px rgba(0,0,0,0.5);
+        transition : 0.3s ease-in-out;
+        border-radius : 15px;
+      }
+      
+
+}
+h2 {
+  display: block;
+  font-size: 1.5em;
+  -webkit-margin-before: 0.83em;
+  -webkit-margin-after: 0.83em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+}
+
+
+td {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.saying_block.buffett {
+  background-image: url(https://assets.traveltriangle.com/blog/wp-content/uploads/2020/01/Ramakrishna-beach-_8th-Jan1.jpg);
+}
+.saying_block.buffett .saying_content {
+  background-color: rgb(245,222,179,0.4);
+}
+.saying_block.bezos {
+  background-image: url(https://media.istockphoto.com/photos/chocolate-hills-picture-id155145175?k=20&m=155145175&s=612x612&w=0&h=GAXUrIDBZxlPPIjEU8Aklb9NC7VsfQiVMVZp1qGcXi8=);
+}
+.saying_block.bezos .saying_content {
+  background-color: rgb(245,222,179,0.4);;
+}
+.saying_block.sandberg {
+  background-image: url(http://www.lan-chun-chih.com/images/man_sandberg.jpg);
+}
+.saying_block.sandberg .saying_content {
+  background-color: rgba(210, 24, 76, 0.7);
+}
+.col-sm-4 {
+  background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-floral-wallpaper_52683-67104.jpg?w=2000");
+  content: "";
+  width:40%;
+  height:20rem;
+  
+  
+}
+@media screen and(max-width:1440px){
+    .row{
+        margin: 0 auto;
+        max-width: 100px;
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 60px;
+        position : relative;
+        justify-content : center;
+        margin-top: 120px;
+      }
+      .text_box{
+        align-items:center;
+        
+      }
+      .row.container {
+        width : 1500px;
+        display : block;
+       
+       
+        
+      }
+}
+/*
+#ppl{
+    background-color:#AC7088;
+    font-size:20px;
+}
+h2{
+    color:#AC7088;
+    font-family:luminari,fantasy ;
+    text-align: center;
+    font-size: 35px;
+}
+.row{
+
+
+}
+    
